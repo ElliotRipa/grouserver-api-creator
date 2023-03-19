@@ -4,7 +4,7 @@ CREATE TABLE Shows(
     name        TEXT NOT NULL,
     start_date  DATE NOT NULL,
     imdb_id     TEXT,
-    imdb_rating TEXT
+    imdb_rating FLOAT
         CHECK (imdb_rating >= 0 AND imdb_rating <= 10)
 
 );
