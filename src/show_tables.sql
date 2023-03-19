@@ -66,6 +66,16 @@ CREATE TABLE YouTubeEpisodes(
 );
 
 
+CREATE TABLE LinkedEpisodes(
+
+    episode     INT PRIMARY KEY,
+    link        TEXT NOT NULL,
+
+    FOREIGN KEY(episode) REFERENCES Episodes(id)
+
+);
+
+
 CREATE TABLE YouTubeVideos(
 
     id           VARCHAR(255) PRIMARY KEY,

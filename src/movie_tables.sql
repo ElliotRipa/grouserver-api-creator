@@ -41,6 +41,16 @@ CREATE TABLE NetflixMovies(
 );
 
 
+CREATE TABLE LinkedMovies(
+
+    movie   INT PRIMARY KEY,
+    link    INT NOT NULL,
+
+    FOREIGN KEY(movie) REFERENCES Movies(id)
+
+);
+
+
 CREATE TABLE CineasternaMovies(
 
     movie           INT PRIMARY KEY,
