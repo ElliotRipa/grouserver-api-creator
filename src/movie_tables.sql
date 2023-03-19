@@ -44,7 +44,7 @@ CREATE TABLE NetflixMovies(
 CREATE TABLE LinkedMovies(
 
     movie   INT PRIMARY KEY,
-    link    INT NOT NULL,
+    link    TEXT NOT NULL,
 
     FOREIGN KEY(movie) REFERENCES Movies(id)
 
