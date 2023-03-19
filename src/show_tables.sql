@@ -4,18 +4,17 @@ CREATE TABLE Shows(
     name        TEXT NOT NULL,
     imdb_id     TEXT,
     imdb_rating TEXT
-
-    CHECK (imdb_rating >= 0 AND imdb_rating <= 10)
+        CHECK (imdb_rating >= 0 AND imdb_rating <= 10)
 
 );
 
 
 CREATE TABLE FinishedShows(
 
-    show            INT PRIMARY KEY,
+    `show`          INT PRIMARY KEY,
     finished_date   DATE NOT NULL,
 
-    FOREIGN KEY(show) REFERENCES Shows(id)
+    FOREIGN KEY(`show`) REFERENCES Shows(id)
 
 );
 
@@ -23,17 +22,16 @@ CREATE TABLE FinishedShows(
 CREATE TABLE Episodes(
 
     id              INT PRIMARY KEY AUTO_INCREMENT,
-    show            TEXT NOT NULL,
+    `show`          INT NOT NULL,
     name            TEXT NOT NULL,
     release_date    DATE NOT NULL,
     season          INT NOT NULL,
     episode         INT NOT NULL,
     imdb_id         TEXT,
     imdb_rating     INT
+        CHECK (imdb_rating >= 0 AND imdb_rating <= 10),
 
-    CHECK (imdb_rating >= 0 AND imdb_rating <= 10),
-
-    FOREIGN KEY(show) REFERENCES Shows(id)
+    FOREIGN KEY(`show`) REFERENCES Shows(id)
 
 );
 
@@ -70,7 +68,7 @@ CREATE TABLE YouTubeEpisodes(
 
 CREATE TABLE YouTubeVideos(
 
-    id           TEXT PRIMARY KEY,
+    id           VARCHAR(255) PRIMARY KEY,
     name         TEXT NOT NULL,
     release_date DATETIME NOT NULL
 
