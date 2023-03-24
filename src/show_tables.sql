@@ -29,7 +29,7 @@ CREATE TABLE Episodes(
     season          INT NOT NULL,
     episode         INT NOT NULL,
     imdb_id         TEXT,
-    imdb_rating     INT
+    imdb_rating     FLOAT
         CHECK (imdb_rating >= 0 AND imdb_rating <= 10),
 
     FOREIGN KEY(`show`) REFERENCES Shows(id)
