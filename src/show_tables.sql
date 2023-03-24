@@ -50,7 +50,7 @@ CREATE TABLE DownloadedEpisodes(
 CREATE TABLE NetflixEpisodes(
 
     episode     INT PRIMARY KEY,
-    netflix_id  INT NOT NULL,
+    netflix_id  TEXT NOT NULL,
 
     FOREIGN KEY(episode) REFERENCES Episodes(id)
 
