@@ -32,6 +32,8 @@ CREATE TABLE Episodes(
     imdb_rating     FLOAT
         CHECK (imdb_rating >= 0 AND imdb_rating <= 10),
 
+    CONSTRAINT episode_number_uk UNIQUE (`show`, season, episode),
+
     FOREIGN KEY(`show`) REFERENCES Shows(id)
 
 );
